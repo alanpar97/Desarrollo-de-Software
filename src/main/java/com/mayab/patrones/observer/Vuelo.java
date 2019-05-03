@@ -10,6 +10,13 @@ public class Vuelo implements Observable {
 	public String estado;
 	public String destino;
 	
+	public Vuelo(String sala, String salida, String estado, String destino) {
+		this.sala = sala;
+		this.salida = salida;
+		this.estado = estado;
+		this.destino = destino;
+		this.observers = new ArrayList<Observer>();
+	}
 	
 	/**
 	 * @return the observers
@@ -37,6 +44,7 @@ public class Vuelo implements Observable {
 	 */
 	public void setSala(String sala) {
 		this.sala = sala;
+		this.notifyObservers();
 	}
 
 	/**
@@ -51,6 +59,7 @@ public class Vuelo implements Observable {
 	 */
 	public void setSalida(String salida) {
 		this.salida = salida;
+		this.notifyObservers();
 	}
 
 	/**
@@ -65,6 +74,7 @@ public class Vuelo implements Observable {
 	 */
 	public void setEstado(String estado) {
 		this.estado = estado;
+		this.notifyObservers();
 	}
 
 	/**
@@ -79,6 +89,7 @@ public class Vuelo implements Observable {
 	 */
 	public void setDestino(String destino) {
 		this.destino = destino;
+		this.notifyObservers();
 	}
 
 	@Override

@@ -5,6 +5,11 @@ public class Pasajero implements Observer {
 	public Observable vuelo;
 	public String nombre;
 	
+	
+	public Pasajero(String nombre, Observable vuelo) {
+		this.setNombre(nombre);
+		this.setVuelo(vuelo);
+	}
 	/**
 	 * @return the nombre
 	 */
